@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Selection Form</title>
+    <link rel="stylesheet" href="style.css"> <!-- Optional: for styling -->
+</head>
+<body>
+    <h1>Topic Selection</h1>
+    <form id="topicForm">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="topic">Select a Topic:</label>
+            <select id="topic" name="topic" required>
+                <option value="">Loading topics...</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+
+    <h2>Submitted Responses</h2>
+    <table id="responsesTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Topic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Responses will be loaded here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
