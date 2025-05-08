@@ -1,4 +1,4 @@
-// Example structure for script.js
+// script.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const topicForm = document.getElementById('topicForm');
@@ -8,8 +8,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const responsesTableBody = document.querySelector('#responsesTable tbody');
 
     // --- CONFIGURATION ---
-    // Define your initial list of topics. This could also be managed in your database.
-    const ALL_POSSIBLE_TOPICS = ["Introduction to AI", "Web Development Basics", "Data Science Fundamentals", "Cloud Computing Overview", "Cybersecurity Essentials"];
+    // Define your initial list of topics.
+    const ALL_POSSIBLE_TOPICS = [
+        "Pollination adaptations",
+        "Seed dispersal mechanisms and significance of dispersal",
+        "Outbreeding devices in flowering plants and its significance",
+        "Polycystic ovarian syndrome",
+        "Reproductive health/ Sexually Transmitted Diseases",
+        "Deviations from Mendelian Genetics",
+        "Genetic Disorders",
+        "Mendelian disorders",
+        "Chromosomal disorders",
+        "Cystic fibrosis",
+        "Colourblindness",
+        "Haemophilia",
+        "Sickle cell anaemia",
+        "Thalassemia",
+        "Congenital defects- causes and possible remedies",
+        "Operon concept",
+        "Human Genome Project",
+        "DNA Fingerprinting and its applications",
+        "Evolution",
+        "Malaria: Treatment and prevention",
+        "Cancer (can take specific Cancer)",
+        "AIDS",
+        "CoVID 19",
+        "Immunity",
+        "Allergies",
+        "Auto- immune diseases ( Rheumatoid Arthritis)",
+        "Drugs and their significance",
+        "Drugs and their abuse",
+        "Alcohol abuse",
+        "Microbes in human welfare",
+        "Tools of biotechnology",
+        "Antibiotic resistance",
+        "Global warming: How is it related to the outburst of new viral infections such as SARS, MERS, Ebola etc",
+        "Applications of biotechnology",
+        "Gene editing and its applications",
+        "CRISPR Cas 9",
+        "RNA interference",
+        "Gene therapy",
+        "Transgenic animals",
+        "Medicinal drugs that are banned across the world",
+        "Ethical issues in DNA fingerprinting and biotechnology",
+        "Responses of living organisms to abiotic factors in environment.",
+        "Adaptations in living organisms",
+        "Population interactions",
+        "Ecological successions- their significance in evolution",
+        "Ecosystem services: How much do we care?",
+        "Biodiversity and conservation practices in Indian culture",
+        "Habitat destruction and biodiversity loss",
+        "Biodiversity and in situ and ex situ conservation",
+        "Pollution control: How it happened during CoVid 19?",
+        "Biomagnification",
+        "Bioinformatics",
+        "RNA interference: How is it useful in developing vaccines?",
+        "Medicinal plants in our surroundings",
+        "Soil less culture techniques and their applications"
+    ];
 
     async function fetchAndPopulateTopics() {
         try {
@@ -41,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ... rest of your script.js file (fetchAndDisplayResponses, form event listener, etc.)
     async function fetchAndDisplayResponses() {
         try {
             const response = await fetch('/api/get-responses'); // Your Vercel serverless function
@@ -57,8 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } catch (error) {
             console.error('Error fetching responses:', error);
-            messageDiv.textContent = 'Could not load responses.';
-            messageDiv.style.color = 'red';
+            // Don't overwrite general messages here unless specific to this action
+            // messageDiv.textContent = 'Could not load responses.';
+            // messageDiv.style.color = 'red';
         }
     }
 
